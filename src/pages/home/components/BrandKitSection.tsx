@@ -73,37 +73,7 @@ export default function BrandKitSection() {
           </button>
         </div>
 
-        {/* Tone of communication card */}
-        <div className="flex justify-center">
-          <div
-            className="rounded-[24px] md:rounded-[28px] p-7 md:p-10 border border-[#C5A059]/20 w-full max-w-lg"
-            style={{ background: 'rgba(255,255,255,0.04)', backdropFilter: 'blur(16px)', WebkitBackdropFilter: 'blur(16px)' }}
-          >
-            <p
-              className="text-[#C5A059]/70 text-xs font-semibold tracking-widest uppercase mb-5 md:mb-7"
-              style={{ fontFamily: 'Montserrat, sans-serif' }}
-            >
-              Tono de comunicación
-            </p>
-            <div className="flex flex-col gap-4 md:gap-5">
-              {[
-                { icon: 'ri-chat-check-line', text: 'Directo y claro' },
-                { icon: 'ri-shield-check-line', text: 'Experto pero accesible' },
-                { icon: 'ri-hand-heart-line', text: 'Cercano y honesto' },
-                { icon: 'ri-forbid-line', text: 'Sin tecnicismos innecesarios' },
-              ].map((t) => (
-                <div key={t.text} className="flex items-center gap-3 md:gap-4">
-                  <div className="w-9 h-9 md:w-10 md:h-10 flex items-center justify-center rounded-xl bg-[#C5A059]/15 flex-shrink-0">
-                    <i className={`${t.icon} text-[#C5A059] text-base md:text-lg`}></i>
-                  </div>
-                  <span className="text-white/80 text-sm md:text-base" style={{ fontFamily: 'Raleway, sans-serif' }}>
-                    {t.text}
-                  </span>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
+
       </div>
     </section>
   );

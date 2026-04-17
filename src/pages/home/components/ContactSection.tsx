@@ -385,37 +385,6 @@ export default function ContactSection() {
                 )}
               </button>
 
-              {/* 3º - Bloque RGPD debajo del botón */}
-              <div
-                className="rounded-xl p-4 md:p-5 border border-[#C5A059]/20"
-                style={{ background: 'rgba(197,160,89,0.04)', fontFamily: 'Raleway, sans-serif' }}
-              >
-                <p
-                  className="text-[#1A1F2B] text-xs font-bold uppercase tracking-widest mb-3"
-                  style={{ fontFamily: 'Montserrat, sans-serif' }}
-                >
-                  Información básica sobre protección de datos
-                </p>
-                <div className="flex flex-col gap-1.5 text-xs text-[#1A1F2B]/60 leading-relaxed">
-                  <p><strong className="text-[#1A1F2B]/80">Responsable:</strong> Daniel Soares Augusto</p>
-                  <p><strong className="text-[#1A1F2B]/80">Finalidad:</strong> Gestionar la consulta o contacto solicitado a través de este formulario.</p>
-                  <p><strong className="text-[#1A1F2B]/80">Legitimación:</strong> Consentimiento del interesado al marcar la casilla de aceptación.</p>
-                  <p><strong className="text-[#1A1F2B]/80">Destinatarios:</strong> No se cederán datos a terceros, salvo obligación legal o proveedores de servicios necesarios para el funcionamiento de la web.</p>
-                  <p>
-                    <strong className="text-[#1A1F2B]/80">Derechos:</strong> Puedes acceder, rectificar y suprimir tus datos dirigiendo un correo a{' '}
-                    <a href="mailto:info@danielsoaresgestiona.com" className="text-[#C5A059] hover:underline" rel="nofollow">
-                      info@danielsoaresgestiona.com
-                    </a>
-                  </p>
-                  <p>
-                    <strong className="text-[#1A1F2B]/80">Información adicional:</strong>{' '}
-                    <a href="/privacidad" target="_blank" rel="nofollow" className="text-[#C5A059] hover:underline">
-                      Política de Privacidad
-                    </a>
-                  </p>
-                </div>
-              </div>
-
               <p className="text-center text-[#1A1F2B]/35 text-xs mt-4" style={{ fontFamily: 'Raleway, sans-serif' }}>
                 <span className="text-red-400">*</span> Campo obligatorio
               </p>
