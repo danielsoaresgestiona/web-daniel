@@ -39,16 +39,27 @@ export default function ContactSection() {
       body.append('privacidad', 'He leído y acepto la Política de Privacidad');
       const res = await fetch(FORM_URL, {
         method: 'POST',
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded',
+          'Accept': 'application/json',
+        },
         body: body.toString(),
       });
-      if (res.ok) {
+      if (res.ok || res.status === 200 || res.status === 302) {
         setStatus('success');
         setFormData({ name: '', email: '', phone: '', service: '', message: '' });
         setPrivacyAccepted(false);
         setCharCount(0);
       } else {
-        setStatus('error');
+        const data = await res.json().catch(() => null);
+        if (data && data.ok) {
+          setStatus('success');
+          setFormData({ name: '', email: '', phone: '', service: '', message: '' });
+          setPrivacyAccepted(false);
+          setCharCount(0);
+        } else {
+          setStatus('error');
+        }
       }
     } catch {
       setStatus('error');
