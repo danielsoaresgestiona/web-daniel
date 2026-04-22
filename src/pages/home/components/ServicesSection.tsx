@@ -34,17 +34,34 @@ const services = [
   {
     id: 'C',
     icon: 'ri-file-shield-2-line',
-    title: 'Trámites administrativos',
+    title: 'Trámites Administrativos',
     tag: null,
     tagColor: '',
     description: 'Nos encargamos de todo el papeleo para que tú no pierdas ni un minuto de tu tiempo.',
     items: [
       'Gestión de vehículos: cambio de titularidad, trámites DGT e ITV a domicilio',
-      'Cumplimiento normativo: protección de datos, plan de igualdad, registro de jornada y control horario',
-      'Redacción y gestión de documentos: contratos, herencias',
+      'Redacción y gestión de documentos: contratos, herencias y gestión patrimonial',
+      'Elaboración de Declaraciones de la Renta',
+      'Gestión de Certificados Electrónicos',
     ],
     footer: 'Facilitamos el proceso administrativo de cualquier trámite',
     image: 'https://readdy.ai/api/search-image?query=official%20documents%20stamps%20and%20legal%20papers%20on%20dark%20elegant%20desk%2C%20bureaucracy%20management%20concept%2C%20professional%20business%20administration%2C%20gold%20seal%20and%20dark%20blue%20tones%2C%20clean%20minimalist%20style&width=400&height=220&seq=service-tramites-01&orientation=landscape',
+  },
+  {
+    id: 'D',
+    icon: 'ri-briefcase-4-line',
+    title: 'Consultoría de Empresas',
+    tag: null,
+    tagColor: '',
+    description: 'Soluciones integrales para optimizar el funcionamiento y los costes de tu empresa, con asesoramiento experto en cada área.',
+    items: [
+      'Optimizaciones Energéticas: ahorro en facturas de luz, gas y suministros empresariales',
+      'Soluciones de Telefonía corporativa: tarifas y contratos adaptados a tu negocio',
+      'Cumplimiento Normativo: RGPD, protección de datos y asesoría legal preventiva',
+      'Soluciones Informáticas integrales: infraestructura, software y soporte tecnológico',
+    ],
+    footer: 'Asesoramiento 360° para tu empresa',
+    image: 'https://readdy.ai/api/search-image?query=modern%20corporate%20office%20desk%20with%20laptop%20and%20business%20strategy%20documents%2C%20professional%20consulting%20environment%2C%20dark%20elegant%20background%20with%20golden%20light%20accents%2C%20minimalist%20business%20style%2C%20warm%20dark%20tones&width=400&height=220&seq=service-consulting-biz-01&orientation=landscape',
   },
 ];
 
@@ -74,7 +91,7 @@ export default function ServicesSection() {
             className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-white leading-tight"
             style={{ fontFamily: 'Montserrat, sans-serif' }}
           >
-            Tres servicios.{' '}
+            Todo lo que necesitas.{' '}
             <span className="text-[#C5A059]">Una sola llamada.</span>
           </h2>
           <p
@@ -85,8 +102,8 @@ export default function ServicesSection() {
           </p>
         </div>
 
-        {/* Cards grid - 1 col mobile, 2 tablet, 3 desktop */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6">
+        {/* Cards grid - 1 col mobile, 2 tablet, 4 desktop */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-5 md:gap-6">
           {services.map((service) => (
             <div
               key={service.id}
@@ -98,7 +115,7 @@ export default function ServicesSection() {
               }}
             >
               {/* Card image */}
-              <div className="relative overflow-hidden h-40 md:h-48 flex-shrink-0">
+              <div className="relative overflow-hidden h-40 md:h-44 flex-shrink-0">
                 <img
                   src={service.image}
                   alt={service.title}
@@ -126,13 +143,13 @@ export default function ServicesSection() {
               </div>
 
               {/* Card content */}
-              <div className="p-5 md:p-7 flex flex-col flex-1">
-                <div className="flex items-center gap-3 mb-3 md:mb-4">
-                  <div className="w-9 h-9 md:w-10 md:h-10 flex items-center justify-center rounded-xl bg-[#C5A059]/15 flex-shrink-0">
-                    <i className={`${service.icon} text-[#C5A059] text-base md:text-lg`}></i>
+              <div className="p-4 md:p-6 flex flex-col flex-1">
+                <div className="flex items-center gap-3 mb-3">
+                  <div className="w-9 h-9 flex items-center justify-center rounded-xl bg-[#C5A059]/15 flex-shrink-0">
+                    <i className={`${service.icon} text-[#C5A059] text-base`}></i>
                   </div>
                   <h3
-                    className="text-white font-bold text-sm md:text-base lg:text-lg leading-tight"
+                    className="text-white font-bold text-sm md:text-base leading-tight"
                     style={{ fontFamily: 'Montserrat, sans-serif' }}
                   >
                     {service.title}
@@ -140,20 +157,20 @@ export default function ServicesSection() {
                 </div>
 
                 <p
-                  className="text-white/60 text-sm leading-relaxed mb-4 md:mb-5"
+                  className="text-white/60 text-xs md:text-sm leading-relaxed mb-3 md:mb-4"
                   style={{ fontFamily: 'Raleway, sans-serif' }}
                 >
                   {service.description}
                 </p>
 
-                <ul className="flex flex-col gap-2.5 md:gap-3 flex-1">
+                <ul className="flex flex-col gap-2 md:gap-2.5 flex-1">
                   {service.items.map((item) => (
-                    <li key={item} className="flex items-start gap-2.5 md:gap-3">
+                    <li key={item} className="flex items-start gap-2">
                       <div className="w-5 h-5 flex items-center justify-center flex-shrink-0 mt-0.5">
-                        <i className="ri-checkbox-circle-fill text-[#C5A059] text-base"></i>
+                        <i className="ri-checkbox-circle-fill text-[#C5A059] text-sm"></i>
                       </div>
                       <span
-                        className="text-white/75 text-xs md:text-sm leading-snug"
+                        className="text-white/75 text-xs leading-snug"
                         style={{ fontFamily: 'Raleway, sans-serif' }}
                       >
                         {item}
@@ -163,7 +180,7 @@ export default function ServicesSection() {
                 </ul>
 
                 {service.footer && (
-                  <div className="mt-4 md:mt-5 pt-3 md:pt-4 border-t border-[#C5A059]/20 flex items-center gap-2">
+                  <div className="mt-4 pt-3 border-t border-[#C5A059]/20 flex items-center gap-2">
                     <i className="ri-shield-check-line text-[#C5A059] text-sm flex-shrink-0"></i>
                     <span
                       className="text-[#C5A059] text-xs font-semibold leading-snug"
